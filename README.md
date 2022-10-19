@@ -8,10 +8,10 @@ COMPONENTS REQUIRED:
 4.	USB Interfacing cable 
 5.	Jumper wires 
 6.	LED of choice 
-THEORY :
-Arduino UNO
- 	  The Uno is a microcontroller board based on the ATmega328P. It has 14 digital input/output pins (of which 6 can be used as PWM outputs), 6 analog inputs, a 16 MHz quartz crystal, a USB connection, a power jack, an ICSP header and a reset button. It contains everything needed to support the microcontroller; simply connect it to a computer with a USB cable or power it with a AC-to-DC adapter or battery to get started.
-	Technical specifications of Arduino UNO :
+# THEORY :
+## Arduino UNO :
+The Uno is a microcontroller board based on the ATmega328P. It has 14 digital input/output pins (of which 6 can be used as PWM outputs), 6 analog inputs, a 16 MHz quartz crystal, a USB connection, a power jack, an ICSP header and a reset button. It contains everything needed to support the microcontroller; simply connect it to a computer with a USB cable or power it with a AC-to-DC adapter or battery to get started.
+ ## Technical specifications of Arduino UNO :
 Microcontroller	ATmega168/328
 Microcontroller	ATmega168/328
 Operating Voltage	5V
@@ -29,12 +29,12 @@ PIN DIAGRAM FOR ATMEGA 328
  
 ![image](https://user-images.githubusercontent.com/36288975/163530394-115baee4-7ed1-49fe-9cce-d7b625e11e85.png)
 
-FIGURE-01
+# FIGURE-01
 ![image](https://user-images.githubusercontent.com/36288975/163530431-4d390e98-0942-42d8-95b8-f57d348e6ad8.png)
 
 
 
-FIGURE-02
+# FIGURE-02
 PROCEDURE 
  Open tinker cad account 
 1.	Select Arduino uno , bread board , digital input and digital output 
@@ -50,7 +50,7 @@ PROCEDURE
 
 
 
-CIRCUIT DIAGRAM 
+## CIRCUIT DIAGRAM 
 
 
 
@@ -60,13 +60,41 @@ CIRCUIT DIAGRAM
 
 
 
-FIGURE -03
+# BEFORE SIMULATION :
+![GitHub Logo](robobef.png)
 
 
 
 
 
-PROGRAM 
+# PROGRAM :
+
+~~~
+// C++ code
+
+int ledpin=4;
+int pushbutton=2;
+int val=0;
+void setup()
+{
+  pinMode(ledpin, OUTPUT);
+  pinMode(pushbutton, OUTPUT);
+}
+
+void loop()
+{
+  val = digitalRead(pushbutton);
+  if(val==0)
+  {
+    digitalWrite(ledpin,HIGH);
+  }
+  else
+  {
+    digitalWrite(ledpin,LOW);
+  }
+}
+~~~
+
  
  
  
@@ -75,7 +103,10 @@ PROGRAM
 
 
 
-Output of the simulation :
+# Output of the simulation :
 
-[My image](username.github.com/repository/img/image.jpg)
+![GitHub Logo](roboaft.png)
+
+## RESULT :
+Thus, we have interfaced a digital input (push button) and blink of LED upon activation.
 
